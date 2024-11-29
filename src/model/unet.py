@@ -159,7 +159,7 @@ class ResnetBlockWithAttn(nn.Module):
         return x
 
 
-class UNet(nn.Module):
+class gNet(nn.Module):
     def __init__(
         self,
         in_channels=6,
