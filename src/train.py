@@ -1,10 +1,11 @@
 #!/bin/python3
 
-from .model import diffusion
+from model import diffusion
 from tqdm import tqdm
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 import os
+import torch
 
 if __name__ == 'main':
     training_iterations = 1000
@@ -19,4 +20,6 @@ if __name__ == 'main':
             epoch_loss += model(batch)
         print(f"Epoch loss was {epoch_loss/len(dataloader)}")
     print("Training Complete")
+
+    torch.save(model, '/usr/data/weights.pth')
 
