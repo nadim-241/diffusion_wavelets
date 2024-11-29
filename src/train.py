@@ -21,5 +21,5 @@ if __name__ == 'main':
         print(f"Epoch loss was {epoch_loss/len(dataloader)}")
     print("Training Complete")
 
-    torch.save(model, '/usr/data/weights.pth')
+    torch.save(model, os.path.join(os.environ.get("WEIGHTS_PATH"), "model.pth"))
 
